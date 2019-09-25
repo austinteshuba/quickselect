@@ -49,9 +49,9 @@ def nthLargest(arr, n):
     if n > len(arr) or arr == None or n < 1:
         return None
     newIndex = len(arr) - n
-    return quickSelect(arr, 0 , len(arr) - 1, newIndex - 1)
+    return quickSelect(arr, 0 , len(arr) - 1, newIndex)
 
-print(nthLargest([1.5,2.5, 2.5], 2))
+print(nthLargest([-3,2,1], 2))
 
 
 
