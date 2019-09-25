@@ -34,7 +34,7 @@ def quickSelect(arr, left, right, n):
     elif n < part:
         return quickSelect(arr, left, part-1, n)
     else:
-        return quickSelect(arr, part + 1, right, n - part)
+        return quickSelect(arr, part+1, right, n - part)
 
 # This is just an easy interface to use quick select.
 # n is now the nth element, not index (i.e. 1 is the smallest)
@@ -52,7 +52,7 @@ def nthLargest(arr, n):
     newIndex = len(arr) - n
     return quickSelect(arr, 0 , len(arr) - 1, newIndex)
 
-print(nthSmallest([4,3,12,3,1,2], 6))
+print(nthSmallest([-2,-1,3,5,2,1,5,3,7,2], 4))
 
 
 
