@@ -1,5 +1,6 @@
 #QuickSelect.py
 #This algorithm is supposed to find the nth smallest element in a list.
+# Best part - it's all in linear time O(n)!
 
 def partition(arr, start, end, n):
     # For simplicity, let's make the pivot the last element
@@ -41,7 +42,16 @@ def nthSmallest(arr, n):
         return None
     return quickSelect(arr, 0, len(arr) - 1, n - 1)
 
-print(nthSmallest([5,2,3,1], 0))
+#A utility function to get the nthLargest
+#You could also just change the quick select function above to get the largest
+#But then you'll have to make a utility for getting the smallest.
+def nthLargest(arr, n):
+    if n > len(arr) or arr == None or n < 1:
+        return None
+    newIndex = len(arr) - n
+    return quickSelect(arr, 0 , len(arr) - 1, newIndex - 1)
+
+print(nthLargest([1.5,2.5, 2.5], 2))
 
 
 
